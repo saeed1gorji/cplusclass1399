@@ -70,7 +70,6 @@ int main(int argc, char const *argv[])
       fwrite(block, sizeof(block), 1, file);
     }
 
-    printf("%d\n", counter);
     fclose(file);
 
     send(new_socket , ack , strlen(ack) , 0 );
