@@ -2,32 +2,47 @@
 #define SENDER_H
 #include <string>
 
+
+/***************************************************************************//**
+ * This class sends a prepared block of data
+ * tryes to connects to server.
+ ******************************************************************************/
+
 class Sender
 {
 
-/// This class try to send data.
 
 public:
-    /// default constructor.    
-    Sender();
+     
+   /***************************************************************************//**
+    * A constructor with two parameters: port and ip address of server.
+    ******************************************************************************/ 
+    Sender(size_t port, std::string ip_address);
 
-    /// constructor with two parameters: size of block and key. 
-    Sender(size_t, std::string);
-
-    /// send a block of characters.
+   /***************************************************************************//**
+    * This member function sends a block of data,
+    * it gets a block of data by refrence as parameter,
+    * it would return zero, if could send successfuly.
+    ******************************************************************************/
     int send(std::string&);
 
+   /***************************************************************************//**
+    * This sets port member field.
+    ******************************************************************************/
     void setPort(size_t);
+
+   /***************************************************************************//**
+    * This sets ip_address field.
+    ******************************************************************************/
     void setIpAddress(std::string);
 
 private:
-    /// the port on which reciever is listening.
-    size_t mPort; 
-    /// the ip address of reciever.
-    std::string mIpAddress;
+ 
+    size_t port; ///< the port on which reciever is listening.
+    std::string ip_address; ///< the ip address of reciever
     
 }
 
 
 #endif
-~      
+      

@@ -1,37 +1,56 @@
 #ifndef ENCRYPOTR_H
 #define ENCRYPTOR_H
+
 #include <string>
 
+/***************************************************************************//**
+ * This class simply encrypts a block of characters
+ * using a symmetric encryption algorithm and a defined key.
+ ******************************************************************************/
 
 class Encryptor
 {
-
-/** This class simply
-  * encrypt a bock of characters
-  * using a defined key.
-  */
  
 public:	
-    /// default constructor.	
+     
+   /***************************************************************************//**
+    * A defaulte constructor, it inits defualt valuse to member fields.
+    ******************************************************************************/
     Encryptor(); 
 
-    /// constructor with two parameters: size of block and key. 
-    Encryptor(const size_t, std::string);
+   /***************************************************************************//**
+    * This constuctor gets the block size as parameter, then sets it in
+    * block_size member field.
+    ******************************************************************************/ 
+    Encryptor(const size_t block);
 
-    /// encrypt a block in place.
-    void encrypt(std::string&);
+   /***************************************************************************//**
+    * This member function encrypts a block of data(characters).
+    * It has only a parameter: refrence of the block we want to encrypt
+    * It encrypts block in place
+    ******************************************************************************/
+    void encrypt(std::string& block);
 
+   /***************************************************************************//**
+    * This member function returns the key value.
+    ******************************************************************************/
     std::string getKey();
 
-    /// randomly generate a new key.
-    void generateNewKey();
+   /***************************************************************************//**
+    * This member function generates a new key randomly,
+    * then puts it in key member field.
+    ******************************************************************************/
+    void generate_newKey();
 
-    /// you can set your own key.
-    void setNewKey(std::string);
+    
+   /***************************************************************************//**
+    * This member function set a new key in key member field.
+    ******************************************************************************/
+    void set_new_key(const std::string _key);
 
 private:
-    const size_t mBlockSize; ///< size of block
-    std::string mKey; 
+    const size_t block_size; ///< size of block in bytes
+    std::string key; 
 
 }
 
