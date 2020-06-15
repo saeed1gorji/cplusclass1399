@@ -22,7 +22,8 @@ public:
     * This constuctor gets the block size as argument, then sets it in
     * block_size member field.
     ******************************************************************************/ 
-    Encryptor(const size_t block);
+    explicit Encryptor(const size_t block);
+    
 
    /***************************************************************************//**
     * This member function encrypts a block of data(characters).

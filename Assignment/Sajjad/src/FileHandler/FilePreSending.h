@@ -19,7 +19,7 @@ public:
     /***************************************************************************//**
      * Constructor with one argument: absolute address of a file.
      ******************************************************************************/ 
-    FilePreSending(const std::string &address);
+    explicit FilePreSendin(const std::string &address);
 
     /***************************************************************************//**
      * This member function reads a file, it has two arguments: address of the file 
