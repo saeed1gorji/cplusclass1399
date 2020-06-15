@@ -17,40 +17,35 @@ class FilePreSending
 public:
 
     /***************************************************************************//**
-     * Constructor with one parameter: absolute address of a file.
+     * Constructor with one argument: absolute address of a file.
      ******************************************************************************/ 
     FilePreSending(const std::string &address);
 
     /***************************************************************************//**
-     * This member function reads a file, it has one parameter: address of the file.
-     * It stores the file in whole_file member field.
+     * This member function reads a file, it has two arguments: address of the file 
+     * and size of blocks in bytes. It reades the file block by block, and stores them
+     * in blocks member field.
      ******************************************************************************/
-    void read_file(const std::string &address);
+    void read_file(const std::string &address, size_t block_size);
+
 
     /***************************************************************************//**
      * This member function Compresses a file and saves it in the same address as
-     * the main file, it has one parameter: address of destination (compressed)file
-     ******************************************************************************/
-    void compress_file(const std::string &address);
+     * the main file.
+     *******************************************************************************/
+    void compress_file();
 	
+   
     /***************************************************************************//**
-     * This member function splits a file into blocks,
-     * it has two parameter: size of blocks and
-     * an empty vector of blocks.
+     * This member function returns file_name member field 
      ******************************************************************************/
-    void split_file(size_t block_size, std::vector<std::string>&);
-    
-
-    /***************************************************************************//**
-     * This member function returns file_name address 
-     ******************************************************************************/
-    std::string* get_file_name();    
+    std::string get_file_name();    
 
 private:
 
     std::string file_address; ///< address of file. 
     std::string file_name; ///< name of file.
-    std::string* whole_file; ///< the whole file which is readed.
+    std::vector<std::string>* blocks; ///< file is stored in blocks
 
 }
 

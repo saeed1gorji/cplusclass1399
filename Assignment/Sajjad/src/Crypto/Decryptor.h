@@ -1,32 +1,42 @@
 #ifndef DECRYPTOR_H
 #define DECRYPTOR_H
+
 #include <string>
 
+  
+/***************************************************************************//**
+ * This class decrypts the block of data which is from sender,
+ * key is also sended by sender. 
+ ******************************************************************************/
 
-class Encryptor
+class Decryptor
 {
-
-/** This class simply
-  * decrypt a bock of encrypted
-  * characters.
-  */
 
 public:
 
-    /// constructor with a parameter: defined key. 
-    Decryptor(const size_t);
+    /***************************************************************************//**
+     * This constructor has one argument: the sended key from sender
+     ******************************************************************************/
+    Decryptor(std::string);
 
-    /// decrypt a block in place.
-    void decrypt(std::string&);
+    /***************************************************************************//**
+     * This member function decrypts the block of data,
+     * it has one argument: the block of data by reference,
+     * it decrypts in place.
+     ******************************************************************************/
+    void decrypt(std::string& block);
+    
 
-    std::string getKey();
+    /***************************************************************************//**
+     * This member function returns the key.
+     ******************************************************************************/
+    std::string get_key();
 
 private:
-
-    std::string mKey;
+    std::string key; ///< sended key
 
 }
 
 
 #endif
-~      
+      

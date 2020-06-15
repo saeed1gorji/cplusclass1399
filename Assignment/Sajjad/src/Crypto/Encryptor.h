@@ -19,14 +19,14 @@ public:
     Encryptor(); 
 
    /***************************************************************************//**
-    * This constuctor gets the block size as parameter, then sets it in
+    * This constuctor gets the block size as argument, then sets it in
     * block_size member field.
     ******************************************************************************/ 
     Encryptor(const size_t block);
 
    /***************************************************************************//**
     * This member function encrypts a block of data(characters).
-    * It has only a parameter: refrence of the block we want to encrypt
+    * It has only one argument: reference of the block we want to encrypt
     * It encrypts block in place
     ******************************************************************************/
     void encrypt(std::string& block);
@@ -34,7 +34,7 @@ public:
    /***************************************************************************//**
     * This member function returns the key value.
     ******************************************************************************/
-    std::string getKey();
+    std::string get_key();
 
    /***************************************************************************//**
     * This member function generates a new key randomly,
@@ -45,8 +45,9 @@ public:
     
    /***************************************************************************//**
     * This member function set a new key in key member field.
+    * It has one argument: the key.
     ******************************************************************************/
-    void set_new_key(const std::string _key);
+    void set_new_key(std::string _key);
 
 private:
     const size_t block_size; ///< size of block in bytes
