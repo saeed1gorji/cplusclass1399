@@ -17,7 +17,7 @@ public:
     /***************************************************************************//**
      * This constructor has one argument: the sended key from sender
      ******************************************************************************/
-    Decryptor(std::string);
+    Decryptor(std::string _key);
 
     /***************************************************************************//**
      * This member function decrypts the block of data,
