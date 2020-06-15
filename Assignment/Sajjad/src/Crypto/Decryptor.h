@@ -17,13 +17,13 @@ public:
     /***************************************************************************//**
      * This constructor has one argument: the sended key from sender
      ******************************************************************************/
-    explicit Decryptor(std::string _key);
+    explicit Decryptor(const std::string &_key);
 
     /***************************************************************************//**
      * This member function decrypts the block of data,
      * it has one argument: the block of data by reference,
      * it decrypts in place.
-     ******************************************************************************/
+     *t****************************************************************************/
     void decrypt(std::string& block);
     
 

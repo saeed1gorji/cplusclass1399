@@ -31,7 +31,7 @@ public:
     * it gets a block of data by refrence as argument,
     * it would return zero, if could send successfuly.
     ******************************************************************************/
-    int send(std::string&);
+    int send(const std::string&);
 
    /***************************************************************************//**
     * This function  sets port member field.
@@ -41,7 +41,7 @@ public:
    /***************************************************************************//**
     * This sets ip_address field.
     ******************************************************************************/
-    void setIpAddress(std::string);
+    void setIpAddress(const std::string&);
 
 private:
  

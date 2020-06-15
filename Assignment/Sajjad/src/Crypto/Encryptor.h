@@ -48,7 +48,7 @@ public:
     * This member function set a new key in key member field.
     * It has one argument: the key.
     ******************************************************************************/
-    void set_new_key(std::string _key);
+    void set_new_key(const std::string &_key);
 
 private:
     const size_t block_size; ///< size of block in bytes

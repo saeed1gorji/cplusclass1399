@@ -45,7 +45,7 @@ public:
    /***************************************************************************//**
     * This sets ip_address field.
     ******************************************************************************/
-    void setIpAddress(std::string);
+    void setIpAddress(const std::string& _ip_address);
 
 private:
 
